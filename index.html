@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGCS公式</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>問い合わせ―MGCS公式</title>
 </head>
 <body>
+    <div id="wrapper">
+        <div id="board">
+            <h1>問い合わせフォーム</h1>
+            <p>商品番号を入力してください</p>
+            <div id="input">
+                <input id="textBox" />
+                <button onclick="onClick()">送信</button>
+            </div>
+            <div id="loadingText">
+                <p>読み込み中...</p>
+            </div>
+            <p class="annotation">Megane Goods Creation Studio 公式</p>
+        </div>
+    </div>
+<script>
+
+//sessionStrageかなにかに保存
+async function getData(){
+    let url = "https://script.google.com/macros/s/AKfycbzAtS5RGigsUMEEkq2aKjGbV5Q27caBYgga4m8S56YVXYkN3vbSybiIRlmf_oWHv-Ja/exec";
     
+    const key = document.getElementById("textBox").value
+    url += `?passward=${key}`
+    try {
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw new Error(`レスポンスステータス: ${response.status}`)
+        }
+        console.log(response)
+        const json = await response.json()
+        console.log(json)
+        return json
+    } catch (error) {
+        console.error(error.message)
+        return "failure!"
+    }
+}
+async function onClick(){
+    document.getElementById("loadingText").style.display="inline";
+    document.getElementById("input").style.display="none";
+
+    const data = await getData()
+    sessionStorage.setItem('secretData', JSON.stringify(data));
+
+    document.querySelector("#loadingText > p").textContent = data.status=="success"?"完了":"失敗"
+    setTimeout(()=>{
+        if(data.status == "success"){
+            window.location.href = '/home/home.html'
+        }
+        document.getElementById("loadingText").style.display="none";
+        document.getElementById("input").style.display="flex";
+    },2000)
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="home.css">
+    <title>MGCS—ホーム</title>
+</head>
+<body>
+    <header>
+        <img id="MGCS_logo" src="MGCS_logo.svg" height="40px" />
+        MGCS公式ショップ
+    </header>
+    <div id="wrapper">
+        <h2>お知らせ</h2>
+        <div id="newsArea">
+        </div>
+    </div>
+    <footer></footer>
+
+<script>
+
+function newsContentElement(data){
+    const string = `
+    <div class="news">
+        <p class="news_title">${data.title}</p>
+        <p class="news_content">${data.content}</p>
+        <p class="news_date">${data.date}</p>
+    </div>
+    `
+    const element = new DOMParser().parseFromString(string, "text/html").body.firstElementChild
+    return element
+}
+async function addNews(){
+    const newsContents = await fetch("news.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
+
+    console.log(newsContents)
+    const newsArea = document.getElementById("newsArea")
+    for(newsContent of newsContents){
+        newsArea.appendChild(newsContentElement(newsContent))
+    }
+}
+addNews()
+</script>
+
+</body>
+</html>

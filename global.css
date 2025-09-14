@@ -1,0 +1,20 @@
+:root{
+    --primary:#0066ee;
+    --background-dark:#232346;
+    --background-light:#fffcfc;
+    --background-light-sub:#eeecec;
+    --text-dark:#121223;
+    --text-dark-sub:#888877;
+    --text-light:#fcfcff;
+    --text-light-sub:#99a;
+    --border-dark-sub:#99a;
+    --r:5px;
+    --notoSansJP:"Noto Sans JP", sans-serif;
+    --IBMPlexSansJP:"IBM Plex Sans JP", sans-serif;
+}
+
+html, body{
+    margin:0;
+    padding: 0;
+    font-family: var(--IBMPlexSansJP);
+}
