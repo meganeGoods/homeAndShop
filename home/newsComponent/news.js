@@ -10,7 +10,7 @@ function newsContentElement(data){
     return element
 }
 async function addNews(){
-    const newsContents = await fetch("/home/news/news.json").then(response => {
+    const newsContents = await fetch("./newsComponent/news.json").then(response => {
       if (!response.ok) {
         throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
       }
