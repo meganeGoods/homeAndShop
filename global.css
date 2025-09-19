@@ -18,7 +18,7 @@ html, body{
     padding: 0;
     font-family: var(--IBMPlexSansJP);
 }
-body > *{
+body > *:not(header,footer){
     margin-left:16px;
     margin-right:16px;
 }
