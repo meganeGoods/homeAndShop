@@ -51,19 +51,20 @@ async function getData(){
     }
 }
 async function onClick(){
-    document.getElementById("loadingText").style.display="inline";
-    document.getElementById("input").style.display="none";
+    document.querySelector("#loadingText > p").textContent = ""
+    document.getElementById("loadingText").style.display="inline"
+    document.getElementById("input").style.display="none"
 
     const data = await getData()
-    sessionStorage.setItem('secretData', JSON.stringify(data));
+    sessionStorage.setItem('secretData', JSON.stringify(data))
 
     document.querySelector("#loadingText > p").textContent = data.status=="success"?"完了":"入力したIDに対応する商品が見つかりません"
     setTimeout(()=>{
         if(data.status == "success"){
             window.location.href = './questionnaire/'
         }
-        document.getElementById("loadingText").style.display="none";
-        document.getElementById("input").style.display="flex";
+        document.getElementById("loadingText").style.display="none"
+        document.getElementById("input").style.display="flex"
     },2000)
 }
 </script>
