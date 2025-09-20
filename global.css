@@ -7,7 +7,9 @@
     --text-dark-sub:#888877;
     --text-light:#fcfcff;
     --text-light-sub:#99a;
+    --border-dark:#445;
     --border-dark-sub:#99a;
+    --shadow:#20202060;
     --r:5px;
     --notoSansJP:"Noto Sans JP", sans-serif;
     --IBMPlexSansJP:"IBM Plex Sans JP", sans-serif;
@@ -34,8 +36,29 @@ header{
     background-color: var(--background-light-sub);
     color:var(--text-dark);
 }
-
+header.toHome{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header.toHome > a{
+    position:relative;
+    width:40%;
+    margin-left:0;
+    margin-right: 16px;
+}
+header.toHome > a > img{
+    width: min(223px, 100%);
+}
+header.toHome > h1{
+    font-size: medium;
+    font-weight: 400;
+}
 a{
     color:#0044dd;
     text-decoration: underline;
+}
+
+.spacerM{
+    height:50px;
 }
