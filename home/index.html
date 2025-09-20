@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./catalog/goodsBoard.css">
     <title>MGCS—ホーム</title>
 </head>
+<div id="./catalog"
 <body>
     <header class="toHome">
         <a href="./index.html">
@@ -19,7 +21,9 @@
         <div id="slideArea">
         </div>
         <div id="goodsCatalog">
-            <a href="./catalog/">商品一覧 ＞</a>
+            <h2>ピックアップ</h2>
+            <div id="goodsGallery"></div>
+            <a href="./catalog/">全ての商品を見る</a>
         </div>
         <h1>お知らせ</h1>
         <div id="newsArea">
@@ -48,6 +52,36 @@
 
 <script src="./newsComponent/news.js"></script>
 <script>
+function goodsComponent(goodsData){
+    const string = `
+    <div class="goods_board">
+        <div class="goods_figure">
+            <img src=${goodsData.imgPath} alt="${goodsData.name}" />
+        </div>
+        <div class="goods_description">
+            <p class="goodsName">${goodsData.name}</p>
+        </div>
+    </div>
+    `
+    const element = new DOMParser().parseFromString(string, "text/html").body.firstElementChild
+    return element
+}
+async function addGoodsBoard(){
+    const goodsData = await fetch("./catalog/goodsData.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
+
+    const wrapper = document.getElementById("goodsGallery")
+    for(let i = 0;i < 3;i++){
+        wrapper.appendChild(goodsComponent(goodsData[i]))
+    }
+}
+addGoodsBoard()
+
+
 addNews()
 console.log(sessionStorage.getItem('secretData'))
 </script>

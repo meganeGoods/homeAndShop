@@ -1,6 +1,19 @@
 #wrapper > *{
     margin: 32px 2vw;
 }
+
+#goodsGallery{
+    position: relative;
+    width:100%;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.goods_board{
+    width:160px !important;
+    aspect-ratio: 3 / 4;
+}
+
 #newsArea{
     border:1px solid var(--border-dark-sub);
     height:20rem;

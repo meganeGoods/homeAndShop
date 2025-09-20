@@ -2,30 +2,3 @@
     display: flex;
     flex-wrap: wrap;
 }
-
-.goods_board{
-    position:relative;
-    width:min(40%, 210px);
-    aspect-ratio: 3 / 4;
-    display: grid;
-    grid-template-rows: 60% 40%;
-
-    border:1px solid var(--border-dark);
-    border-radius: var(--r);
-    margin:16px;
-    box-shadow: 0px 4px 8px var(--shadow);
-}
-.goods_figure{
-    width:100%;
-    object-fit: cover;
-}
-.goods_description{
-    padding-left: .5rem;
-    padding-right: .5rem;
-}
-.goodsName{
-    font-weight: bolder;
-}
-.goodsName, .goodsPrice{
-    margin:5px;
-}
