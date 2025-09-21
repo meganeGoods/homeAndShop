@@ -1,17 +1,18 @@
 #wrapper > *{
-    margin: 32px 2vw;
+    margin: 64px 2vw;
 }
 
 #goodsGallery{
     position: relative;
-    width:100%;
+    width:92vw;
+    height:200px;
     overflow-x: scroll;
     display: flex;
     flex-wrap: nowrap;
 }
 .goods_board{
     width:160px !important;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1;
 }
 
 #newsArea{

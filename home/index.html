@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./catalog/goodsBoard.css">
     <title>MGCS—ホーム</title>
 </head>
-<div id="./catalog"
 <body>
     <header class="toHome">
         <a href="./index.html">
@@ -21,12 +20,14 @@
         <div id="slideArea">
         </div>
         <div id="goodsCatalog">
-            <h2>ピックアップ</h2>
+            <h1>ピックアップ</h1>
             <div id="goodsGallery"></div>
             <a href="./catalog/">全ての商品を見る</a>
         </div>
-        <h1>お知らせ</h1>
-        <div id="newsArea">
+        <div>
+            <h1>お知らせ</h1>
+            <div id="newsArea">
+            </div>
         </div>
     </div>
     <footer>
@@ -56,7 +57,7 @@ function goodsComponent(goodsData){
     const string = `
     <div class="goods_board">
         <div class="goods_figure">
-            <img src=${goodsData.imgPath} alt="${goodsData.name}" />
+            <img src=${goodsData.imgPath} alt="${goodsData.name}" width="100px"/>
         </div>
         <div class="goods_description">
             <p class="goodsName">${goodsData.name}</p>

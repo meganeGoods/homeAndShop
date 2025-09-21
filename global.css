@@ -30,6 +30,7 @@ header{
     position:fixed;
     width:100%;
     top:0;
+    left:0;
     z-index: 100;
     box-shadow: 0px 2px 8px #000a;
     height:60px;
@@ -54,6 +55,7 @@ header.toHome > h1{
     font-size: medium;
     font-weight: 400;
 }
+
 a{
     color:#0044dd;
     text-decoration: underline;
