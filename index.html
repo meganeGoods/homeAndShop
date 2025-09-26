@@ -17,7 +17,7 @@
     <div id="wrapper">
         <div id="board">
             <h1>問い合わせフォーム</h1>
-            <p>商品IDを入力してください</p>
+            <p id="please_input">商品IDを入力してください</p>
             <div id="input">
                 <input id="textBox" />
                 <button onclick="onClick()">送信</button>
@@ -83,6 +83,7 @@ async function onClick(){
     document.querySelector("#loadingText > p").textContent = ""
     document.getElementById("loadingText").style.display="inline"
     document.getElementById("input").style.display="none"
+    document.getElementById("please_input").style.display="none"
 
     const subData = await getSubData()
     console.log(subData)
@@ -101,6 +102,7 @@ async function onClick(){
         }
         document.getElementById("loadingText").style.display="none"
         document.getElementById("input").style.display="flex"
+        document.getElementById("please_input").style.display="block"
     },2000)
 }
 </script>
