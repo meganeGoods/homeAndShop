@@ -1,18 +1,28 @@
 #wrapper > *{
     margin: 64px 2vw;
 }
-
+#topVisual{
+    position:relative;
+    width:100%;
+    margin:64px 0;
+}
+#topImg{
+    width:100%;
+}
 #goodsGallery{
     position: relative;
     width:92vw;
     height:200px;
     overflow-x: scroll;
+    scroll-snap-type: x proximity;
     display: flex;
     flex-wrap: nowrap;
 }
 .goods_board{
-    width:160px !important;
+    width:160px;
     aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 #newsArea{

@@ -50,13 +50,49 @@ async function getData(){
         return "failure!"
     }
 }
+async function getSubData(){
+    console.log("loading...")
+    let campaignsData = await fetch("./data/campaigns.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    let goodsData = await fetch("./data/goodsData.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    const newsData = await fetch("./data/news.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
+
+    let rep = {
+        "goodsData":goodsData,
+        "newsData":newsData,
+        "campaignsData":campaignsData
+    }
+    console.log("loaded!",rep)
+    return rep
+}
 async function onClick(){
     document.querySelector("#loadingText > p").textContent = ""
     document.getElementById("loadingText").style.display="inline"
     document.getElementById("input").style.display="none"
 
+    const subData = await getSubData()
+    console.log(subData)
+    sessionStorage.setItem('newsData', JSON.stringify(subData.newsData))
+    sessionStorage.setItem('campaignsData', JSON.stringify(subData.campaignsData))
+    sessionStorage.setItem('goodsData', JSON.stringify(subData.goodsData))
+
     const data = await getData()
     sessionStorage.setItem('secretData', JSON.stringify(data))
+    console.log("updated")
 
     document.querySelector("#loadingText > p").textContent = data.status=="success"?"完了":"入力したIDに対応する商品が見つかりません"
     setTimeout(()=>{

@@ -36,12 +36,7 @@ function goodsComponent(goodsData){
     return element
 }
 async function addGoodsBoard(){
-    const goodsData = await fetch("./goodsData.json").then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
-      }
-      return response.json();
-    })
+    const goodsData = JSON.parse(sessionStorage.getItem('goodsData'))
 
     const wrapper = document.getElementById("wrapper")
     for(let goodsDatum of goodsData){

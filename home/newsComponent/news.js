@@ -10,12 +10,7 @@ function newsContentElement(data){
     return element
 }
 async function addNews(){
-    const newsContents = await fetch("./newsComponent/news.json").then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
-      }
-      return response.json();
-    })
+    const newsContents = JSON.parse(sessionStorage.getItem('newsData'))
 
     console.log(newsContents)
     const newsArea = document.getElementById("newsArea")
