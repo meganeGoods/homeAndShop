@@ -1,6 +1,6 @@
 [
     {
-        "visiblity":"public",
+        "visibility":"public",
         "title":"タイトル1",
         "explanation":"説明1",
         "comments":[
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "visiblity":"public",
+        "visibility":"public",
         "title":"タイトル2",
         "attachments":[
             {
@@ -56,7 +56,7 @@
         ]
     },
     {
-        "visiblity":"secret",
+        "visibility":"secret",
         "title":"タイトル3(極秘)",
         "explanation":"説明1",
         "comments":[

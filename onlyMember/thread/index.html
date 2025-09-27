@@ -9,10 +9,12 @@
 </head>
 <body>
 <div id="threadWrapper">
+    <a href="../index.html">←戻る</a>
     <h1 id="heading" class="threadHeading">タイトル</h1>
     <div id="header">
-        <p id="expalanation">説明</p>
+        <p id="expalanation"></p>
         <p id="date"></p>
+        <p id="fileTitle"></p>
         <div id="fileArea"></div>
     </div>
 
@@ -24,18 +26,33 @@
 <script src="./comment.js"></script>
 <script src="./file.js"></script>
 <script>
-const commentsArea = document.getElementById("commentsArea")
-const fileArea = document.getElementById("fileArea")
 const threadsData = JSON.parse(localStorage.getItem("threadsData"))
 const queryString = location.search
-const params = new URLSearchParams(queryString);
+const params = new URLSearchParams(queryString)
 const index = parseInt(params.get("page"))
+const userData = JSON.parse(localStorage.getItem("userData"))
 
+
+//なんちゃって認証
+if(threadsData[index].visibility == "secret" && userData.status == "commons"){
+    document.getElementById("threadWrapper").style.display = "none" 
+    setTimeout(()=>(alert("閲覧権限がありません")),200)
+}
+const commentsArea = document.getElementById("commentsArea")
+const fileArea = document.getElementById("fileArea")
+
+
+//データ充填
+document.getElementById("heading").textContent = threadsData[index].title
+document.getElementById("expalanation").textContent = threadsData[index].explanation
 for(data of threadsData[index].comments){
     commentsArea.appendChild(commentComponent(data))
 }
-for(data of threadsData[index].attachments){
-    fileArea.appendChild(fileComponent(data))
+if(threadsData[index]?.attachments){
+    document.getElementById("fileTitle").textContent = "添付ファイル"
+    for(data of threadsData[index].attachments){
+        fileArea.appendChild(fileComponent(data))
+    }
 }
 </script>
 </body>

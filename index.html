@@ -35,7 +35,7 @@ async function getData(){
     let url = "https://script.google.com/macros/s/AKfycbzAtS5RGigsUMEEkq2aKjGbV5Q27caBYgga4m8S56YVXYkN3vbSybiIRlmf_oWHv-Ja/exec";
     
     const key = document.getElementById("textBox").value
-    url += `?passward=${key}`
+    url += `?password=${key}`
     try {
         const response = await fetch(url)
         if (!response.ok) {
@@ -76,12 +76,19 @@ async function getSubData(){
       }
       return response.json();
     })
+    const memberData = await fetch("./data/MGCSMember.json").then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+      return response.json();
+    })
 
     let rep = {
         "goodsData":goodsData,
         "newsData":newsData,
         "campaignsData":campaignsData,
-        "threadsData":threadsData
+        "threadsData":threadsData,
+        "memberData":memberData
     }
     console.log("loaded!",rep)
     return rep
@@ -98,6 +105,7 @@ async function onClick(){
     localStorage.setItem('campaignsData', JSON.stringify(subData.campaignsData))
     localStorage.setItem('goodsData', JSON.stringify(subData.goodsData))
     localStorage.setItem('threadsData', JSON.stringify(subData.threadsData))
+    localStorage.setItem('memberData', JSON.stringify(subData.memberData))
 
     const data = await getData()
     localStorage.setItem('secretData', JSON.stringify(data))

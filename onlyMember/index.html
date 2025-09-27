@@ -13,33 +13,37 @@
             <img id="MGCS_logo" src="../home/MGCS_logo.svg" height="40px" />
         </a>
         <h1>MGCS社員ポータル</h1>
+        <button id="logOutButton" onclick="logOut()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M206.78-100.78q-44.3 0-75.15-30.85-30.85-30.85-30.85-75.15v-546.44q0-44.3 30.85-75.15 30.85-30.85 75.15-30.85h277.74v106H206.78v546.44h277.74v106H206.78Zm425.87-152.09L559-328.39 657.61-427H355.48v-106h302.13L559-631.61l73.65-75.52L859.22-480 632.65-252.87Z"/></svg>
+            <p  style="font-size: .5rem;margin:1px;">log out</p>
+        </button>
     </header>
     <div class="spacerM"></div>
     <div id="wrapper">
+        <h1>スレッド</h1>
         <button id="createThreadsButton">＋新しく作成</button>
         <div id="threadsArea"></div>
     </div>
 
 <script src="./threads.js"></script>
 <script>
-document.getElementById("wrapper").style.display = "none"
-const id = prompt("ID：")
-const pass = prompt("パスワード：")
-if(id == "123" && pass == "abc"){
-    document.getElementById("wrapper").style.display = "block"
-    localStorage.setItem("user_id", id)
-    localStorage.setItem("user_pass", pass)
-}
-else{
-    alert("IDとパスワードが一致していません")
+if(!localStorage.getItem("userData")){
+    location.href = "./admission"
 }
 
 const threadsArea = document.getElementById("threadsArea")
 const threadsData = JSON.parse(localStorage.getItem("threadsData"))
+const userData = JSON.parse(localStorage.getItem("userData"))
 threadsData.forEach((x, i) => {
-    threadsArea.appendChild(threadsComponent(x, i))
+    if(!(x.visibility == "secret" && userData.status == "commons")){
+        threadsArea.appendChild(threadsComponent(x, i))
+    }
 })
 
+function logOut(){
+    localStorage.removeItem("userData")
+    location.reload()
+}
 </script>
 </body>
 </html>

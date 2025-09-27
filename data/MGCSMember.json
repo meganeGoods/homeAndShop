@@ -1,0 +1,32 @@
+[
+    {
+        "name":"篝宗介",
+        "id":"123",
+        "pass":"abc",
+        "status":"commons",
+        "forgottenpassword":{
+            "Q":"好きな色は？",
+            "A":"白"
+        }
+    },
+    {
+        "name":"猿渡賢造",
+        "id":"8724",
+        "pass":"lsds",
+        "status":"executives",
+        "forgottenpassword":{
+            "Q":"好きな色は？",
+            "A":"白"
+        }
+    },
+    {
+        "name":"佐々木晴政",
+        "id":"4298",
+        "pass":"fbhd",
+        "status":"executives",
+        "forgottenpassword":{
+            "Q":"好きな色は？",
+            "A":"白"
+        }
+    }
+]

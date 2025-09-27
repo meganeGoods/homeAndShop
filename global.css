@@ -40,7 +40,7 @@ header{
 }
 header.toHome{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 header.toHome > a{

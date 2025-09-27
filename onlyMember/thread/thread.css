@@ -21,7 +21,7 @@ body{
 }
 
 .comment{
-    margin:24px 0;
+    margin:8px 0 24px 0;
 }
 .comment_messanger{
     display:inline-block;
@@ -40,6 +40,11 @@ body{
 .command{
     text-align: center;
 }
+#fileTitle{
+    font-weight: 500;
+    margin-top:16px;
+    margin-bottom: 4px;
+}
 #fileArea{
     display: flex;
     flex-direction: row;
@@ -55,6 +60,7 @@ body{
     padding:2px;
     margin:4px;
     border:solid 1px var(--border-dark-sub);
+    box-shadow: 0px 2px 8px var(--shadow);
 }
 .fileName{
     display: inline-block;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="./admission.css">
+    <title>MGCS-社員ポータル</title>
+</head>
+<body>
+    <header class="toHome">
+        <a href="./index.html">
+            <img id="MGCS_logo" src="../../home/MGCS_logo.svg" height="40px" />
+        </a>
+        <h1 id="headerHeading">ログイン画面</h1>
+    </header>
+    <div class="spacerM"></div>
+    <div id="wrapperAdmission">
+        <div id="board">
+            <div>
+                <p class="label">ID</p>
+                <input id="textBox_ID" />
+            </div>
+            <div>
+                <p class="label" id="label_password">パスワード</p>
+                <input type="password" id="textBox_password" />
+            </div>
+            <button id="logInButton" onclick="logIn()">ログイン</button>
+            <button id="forgottonpassword" onclick="displayHelp()">パスワードを忘れた場合はこちら</button>
+            <p id="anotation"></p>
+        </div>
+    </div>
+<script>
+function logIn(){
+    const id = document.getElementById("textBox_ID").value
+    const pass = document.getElementById("textBox_password").value
+    const memberData = JSON.parse(localStorage.getItem("memberData"))
+    console.log(memberData)
+    const checkResult = memberData.map((x,i) => ({...x, index:i})).filter((x) => (x.id == id && (x.pass == pass || x.forgottenpassword.A == pass)))
+    if(checkResult.length == 1){
+        localStorage.setItem("userData", JSON.stringify(checkResult[0]))
+        location.href = "../index.html"
+    }
+    else{
+        document.getElementById("anotation").textContent = "IDとパスワードが一致していません"
+    }
+}
+function displayHelp(){
+    const id = document.getElementById("textBox_ID").value
+    const memberData = JSON.parse(localStorage.getItem("memberData"))
+    const checkResult = memberData.map((x,i) => ({...x, index:i})).filter((x) => (x.id == id))
+    if(checkResult.length == 0){
+        document.getElementById("anotation").textContent = "正しいIDを入力してください"
+    }
+    else{
+        document.getElementById("label_password").textContent = `質問：${checkResult[0].forgottenpassword.Q}`
+        document.getElementById("textBox_password").type = ""
+    }
+}
+</script>
+</body>
+</html>
