@@ -79,7 +79,7 @@ function goodsComponent(goodsData){
     return element
 }
 function addGoodsBoard(){
-    const goodsData = JSON.parse(sessionStorage.getItem('goodsData'))
+    const goodsData = JSON.parse(localStorage.getItem('goodsData'))
 
     const wrapper = document.getElementById("goodsGallery")
     for(let i = 0;i < 3;i++){
@@ -88,7 +88,7 @@ function addGoodsBoard(){
 }
 addGoodsBoard()
 function addCampaigns(){
-    const data = JSON.parse(sessionStorage.getItem('campaignsData'))
+    const data = JSON.parse(localStorage.getItem('campaignsData'))
     const wrapper = document.getElementById("campaignsArea")
     for(let datum of data){
         wrapper.appendChild(campaignsComponent(datum))
@@ -97,7 +97,7 @@ function addCampaigns(){
 addCampaigns()
 
 addNews()
-console.log(sessionStorage.getItem('secretData'))
+console.log(localStorage.getItem('secretData'))
 </script>
 
 </body>

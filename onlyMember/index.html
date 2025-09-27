@@ -27,15 +27,15 @@ const id = prompt("ID：")
 const pass = prompt("パスワード：")
 if(id == "123" && pass == "abc"){
     document.getElementById("wrapper").style.display = "block"
-    sessionStorage.setItem("user_id", id)
-    sessionStorage.setItem("user_pass", pass)
+    localStorage.setItem("user_id", id)
+    localStorage.setItem("user_pass", pass)
 }
 else{
     alert("IDとパスワードが一致していません")
 }
 
 const threadsArea = document.getElementById("threadsArea")
-const threadsData = JSON.parse(sessionStorage.getItem("threadsData"))
+const threadsData = JSON.parse(localStorage.getItem("threadsData"))
 threadsData.forEach((x, i) => {
     threadsArea.appendChild(threadsComponent(x, i))
 })

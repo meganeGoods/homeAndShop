@@ -94,13 +94,13 @@ async function onClick(){
 
     const subData = await getSubData()
     console.log(subData)
-    sessionStorage.setItem('newsData', JSON.stringify(subData.newsData))
-    sessionStorage.setItem('campaignsData', JSON.stringify(subData.campaignsData))
-    sessionStorage.setItem('goodsData', JSON.stringify(subData.goodsData))
-    sessionStorage.setItem('threadsData', JSON.stringify(subData.threadsData))
+    localStorage.setItem('newsData', JSON.stringify(subData.newsData))
+    localStorage.setItem('campaignsData', JSON.stringify(subData.campaignsData))
+    localStorage.setItem('goodsData', JSON.stringify(subData.goodsData))
+    localStorage.setItem('threadsData', JSON.stringify(subData.threadsData))
 
     const data = await getData()
-    sessionStorage.setItem('secretData', JSON.stringify(data))
+    localStorage.setItem('secretData', JSON.stringify(data))
     console.log("updated")
 
     document.querySelector("#loadingText > p").textContent = data.status=="success"?"完了":"入力したIDに対応する商品が見つかりません"

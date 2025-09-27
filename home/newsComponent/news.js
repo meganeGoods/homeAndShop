@@ -10,7 +10,7 @@ function newsContentElement(data){
     return element
 }
 async function addNews(){
-    const newsContents = JSON.parse(sessionStorage.getItem('newsData'))
+    const newsContents = JSON.parse(localStorage.getItem('newsData'))
 
     console.log(newsContents)
     const newsArea = document.getElementById("newsArea")
