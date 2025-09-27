@@ -22,17 +22,17 @@
 
 <script src="./threads.js"></script>
 <script>
-// document.getElementById("wrapper").style.display = "none"
-// const id = prompt("ID：")
-// const pass = prompt("パスワード：")
-// if(id == "123" && pass == "abc"){
-//     document.getElementById("wrapper").style.display = "block"
-//     sessionStorage.setItem("user_id", id)
-//     sessionStorage.setItem("user_pass", pass)
-// }
-// else{
-//     alert("IDとパスワードが一致していません")
-// }
+document.getElementById("wrapper").style.display = "none"
+const id = prompt("ID：")
+const pass = prompt("パスワード：")
+if(id == "123" && pass == "abc"){
+    document.getElementById("wrapper").style.display = "block"
+    sessionStorage.setItem("user_id", id)
+    sessionStorage.setItem("user_pass", pass)
+}
+else{
+    alert("IDとパスワードが一致していません")
+}
 
 const threadsArea = document.getElementById("threadsArea")
 const threadsData = JSON.parse(sessionStorage.getItem("threadsData"))
