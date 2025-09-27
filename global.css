@@ -9,7 +9,7 @@
     --text-light-sub:#99a;
     --border-dark:#445;
     --border-dark-sub:#99a;
-    --shadow:#20202060;
+    --shadow:#20202030;
     --r:5px;
     --notoSansJP:"Noto Sans JP", sans-serif;
     --IBMPlexSansJP:"IBM Plex Sans JP", sans-serif;
@@ -66,10 +66,4 @@ a{
 
 .spacerM{
     height:60px;
-}
-
-h1,h2,h3{
-    font-family: var(--zenKakuGothicNew);
-    color:#343468;
-    font-weight: 600;
 }

@@ -9,10 +9,14 @@
 #topImg{
     width:100%;
 }
+#catchcopyArea{
+    margin:8px 0;
+}
 #catchcopy{
     font-size: 2rem;
     font-family: var(--zenKakuGothicNew);
     font-weight: 600;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 #catchcopy_sub{

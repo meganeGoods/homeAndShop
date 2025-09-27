@@ -1,0 +1,66 @@
+body{
+    background-color: var(--background-light-sub);
+}
+#header{
+    margin:8px;
+    padding:4px;
+    border-radius: var(--r);
+    background-color: var(--background-light);
+}
+#heading{
+    font-family: var(--IBMPlexSansJP);
+}
+.threadHeading{
+    padding-left: 8px;
+}
+#commentsArea{
+    margin:8px;
+    padding:4px;
+    background-color: var(--background-light);
+    border-radius: var(--r);
+}
+
+.comment{
+    margin:24px 0;
+}
+.comment_messanger{
+    display:inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.comment_date{
+    display:inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color:var(--text-dark-sub);
+}
+.comment_text{
+    margin:4px 0;
+}
+.command{
+    text-align: center;
+}
+#fileArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fileTips{
+    position: relative;
+    width:6rem;
+    display: flex;
+    align-content: center;
+    background-color: var(--background-light-sub);
+    border-radius: var(--r);
+    padding:2px;
+    margin:4px;
+    border:solid 1px var(--border-dark-sub);
+}
+.fileName{
+    display: inline-block;
+    width:5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin:0;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="./thread.css">
+    <title>スレッド</title>
+</head>
+<body>
+<div id="threadWrapper">
+    <h1 id="heading" class="threadHeading">タイトル</h1>
+    <div id="header">
+        <p id="expalanation">説明</p>
+        <p id="date"></p>
+        <div id="fileArea"></div>
+    </div>
+
+    <h2 class="threadHeading">コメント・ログ</h2>
+    <div id="commentsArea">
+    </div>
+</div>
+
+<script src="./comment.js"></script>
+<script src="./file.js"></script>
+<script>
+const commentsArea = document.getElementById("commentsArea")
+const fileArea = document.getElementById("fileArea")
+const threadsData = JSON.parse(sessionStorage.getItem("threadsData"))
+const queryString = location.search
+const params = new URLSearchParams(queryString);
+const index = parseInt(params.get("page"))
+
+for(data of threadsData[index].comments){
+    commentsArea.appendChild(commentComponent(data))
+}
+for(data of threadsData[index].attachments){
+    fileArea.appendChild(fileComponent(data))
+}
+</script>
+</body>
+</html>

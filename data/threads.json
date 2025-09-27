@@ -24,7 +24,19 @@
     {
         "visiblity":"public",
         "title":"タイトル2",
-        "explanation":"説明2",
+        "attachments":[
+            {
+                "type":"image",
+                "name":"ロゴ",
+                "URL":"https://lh3.googleusercontent.com/d/17_0kyylPbBEv3b7_3-RW2sNAVkNB221D"
+            },
+            {
+                "type":"image",
+                "name":"ロゴ2",
+                "URL":"https://lh3.googleusercontent.com/d/17_0kyylPbBEv3b7_3-RW2sNAVkNB221D"
+            }
+        ],
+        "explanation":"説明2＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊",
         "comments":[
             {
                 "messanger":"篝宗介",

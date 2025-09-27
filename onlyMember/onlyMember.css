@@ -27,10 +27,15 @@ body{
 .thread_title{
     font-weight: 600;
     margin:4px;
-    font-family: var(--IBMPlexSansJP);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .thread_explanation{
     margin:4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .thread_date{
     color:var(--text-dark-sub);
