@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="./onlyMember.css">
     <title>MGCS-社員ポータル</title>
 </head>
 <body>
-    
+    <header class="toHome">
+        <a href="./index.html">
+            <img id="MGCS_logo" src="../home/MGCS_logo.svg" height="40px" />
+        </a>
+        <h1>MGCS社員ポータル</h1>
+    </header>
+    <div class="spacerM"></div>
+    <div id="wrapper">
+        <button id="createThreadsButton">＋新しく作成</button>
+        <div id="threadsArea"></div>
+    </div>
+<script src="./threads.js"></script>
+<script>
+const threadsArea = document.getElementById("threadsArea")
+const threadsData = JSON.parse(sessionStorage.getItem("threadsData"))
+for(data of threadsData){
+    threadsArea.appendChild(threadsComponent(data))
+}
+</script>
 </body>
 </html>

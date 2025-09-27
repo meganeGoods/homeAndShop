@@ -13,6 +13,7 @@
     --r:5px;
     --notoSansJP:"Noto Sans JP", sans-serif;
     --IBMPlexSansJP:"IBM Plex Sans JP", sans-serif;
+    --zenKakuGothicNew:"Zen Kaku Gothic New", sans-serif;
 }
 
 html, body{
@@ -54,6 +55,8 @@ header.toHome > a > img{
 header.toHome > h1{
     font-size: medium;
     font-weight: 400;
+    font-family: var(--IBMPlexSansJP);
+    color:var(--text-dark);
 }
 
 a{
@@ -62,5 +65,11 @@ a{
 }
 
 .spacerM{
-    height:50px;
+    height:60px;
+}
+
+h1,h2,h3{
+    font-family: var(--zenKakuGothicNew);
+    color:#343468;
+    font-weight: 600;
 }
