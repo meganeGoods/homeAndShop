@@ -27,9 +27,14 @@
             ＋新しく作成
         </button>
         <div id="threadsArea"></div>
+        <h1>個人ファイル</h1>
+        <div id="stockedFilesArea"></div>
     </div>
+    <div class="spacerM"></div>
+    <div class="spacerM"></div>
 
 <script src="./threads.js"></script>
+<script src="./thread/file.js"></script>
 <script>
 if(!localStorage.getItem("userData")){
     location.href = "./admission"
@@ -48,6 +53,15 @@ function logOut(){
     localStorage.removeItem("userData")
     location.reload()
 }
+
+const memberData = JSON.parse(localStorage.getItem("memberData"))
+const stockedFilesArea = document.getElementById("stockedFilesArea")
+for(let file of memberData[userData.index].stockedFiles){
+    stockedFilesArea.appendChild(
+        fileComponent(file)
+    )
+}
+
 </script>
 </body>
 </html>

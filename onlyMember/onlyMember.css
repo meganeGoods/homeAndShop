@@ -50,3 +50,36 @@ body{
 h1{
     padding: 0 !important;
 }
+
+
+
+#fileTitle{
+    font-weight: 500;
+    margin-top:16px;
+    margin-bottom: 4px;
+}
+#fileArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fileTips{
+    position: relative;
+    width:10rem;
+    display: flex;
+    align-content: center;
+    background-color: var(--background-light-sub);
+    border-radius: var(--r);
+    padding:2px;
+    margin:4px;
+    border:solid 1px var(--border-dark-sub);
+    box-shadow: 0px 2px 8px var(--shadow);
+}
+.fileName{
+    display: inline-block;
+    width:5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin:0;
+}
