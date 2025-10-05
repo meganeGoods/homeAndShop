@@ -13,7 +13,7 @@ h1,h2,h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
 }
 #topImg{
     width:max(750px, 100%);
