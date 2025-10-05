@@ -50,7 +50,7 @@ function displayHelp(){
     const memberData = JSON.parse(localStorage.getItem("memberData"))
     const checkResult = memberData.map((x,i) => ({...x, index:i})).filter((x) => (x.id == id))
     if(checkResult.length == 0){
-        document.getElementById("anotation").textContent = "正しいIDを入力してください"
+        document.getElementById("anotation").textContent = "そのIDをもつ社員は見つかりません"
     }
     else{
         document.getElementById("label_password").textContent = `質問：${checkResult[0].forgottenpassword.Q}`

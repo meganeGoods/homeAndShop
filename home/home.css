@@ -1,20 +1,32 @@
 #wrapper > *{
     margin: 64px 2vw;
 }
+h1,h2,h3{
+    color:var(--primary);
+}
 #topVisual{
     position:relative;
     width:100%;
     margin:0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9;
 }
 #topImg{
-    width:100%;
+    width:max(750px, 100%);
+    aspect-ratio: 2 / 1;
 }
+
 #catchcopyArea{
     margin:8px 0;
 }
 #catchcopy{
     font-size: 2rem;
     font-family: var(--zenKakuGothicNew);
+    color:var(--primary);
     font-weight: 600;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -25,7 +37,6 @@
 #goodsGallery{
     position: relative;
     width:92vw;
-    height:200px;
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     display: flex;
@@ -78,9 +89,12 @@ footer > div{
     color:var(--text-dark);
 }
 footer h2, footer h3{
-    color:var(--primary);
-    font-weight: 500;
+    color:var(--text-dark);
+    font-weight: 600;
 }
 footer h3, footer p{
     padding-left: 1rem;
+}
+footer a>h2, footer a>h3{
+    color:var(--link);
 }

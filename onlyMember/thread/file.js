@@ -6,7 +6,7 @@ function fileComponent(data){
     }
 
     let string = `
-    <a class="fileTips" href="${data.URL}" style="text-decoration:none; color:var(--text-dark);">
+    <a class="fileTips" target="_" href="${data.URL}" style="text-decoration:none; color:var(--text-dark);">
         ${icons[data.type]}
         <p class="fileName">${data.name}</p>
     </a>
