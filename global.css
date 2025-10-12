@@ -69,3 +69,8 @@ a{
 .spacerM{
     height:60px;
 }
+
+.smallText{
+    font-size:small;
+    color: var(--text-dark-sub);
+}

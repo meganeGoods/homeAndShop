@@ -21,6 +21,9 @@
     <h2 class="threadHeading">コメント・ログ</h2>
     <div id="commentsArea">
     </div>
+    <div class="spacerM"></div>
+    <p id="threadId" class="smallText"></p>
+    <div class="spacerM"></div>
 </div>
 
 <script src="./comment.js"></script>
@@ -54,6 +57,8 @@ if(threadsData[index]?.attachments){
         fileArea.appendChild(fileComponent(data))
     }
 }
+
+document.getElementById("threadId").textContent = `[info] threadsNum=${index}`
 </script>
 </body>
 </html>
