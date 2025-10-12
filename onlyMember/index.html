@@ -89,8 +89,12 @@ for(let file of memberData[userData.index].stockedFiles){
 }
 
 const receivedMessageArea = document.getElementById("receivedMessageArea")
+
 for(let message of memberData[userData.index].receivedMessages){
-    receivedMessageArea.appendChild(messageComponent(message, memberData.filter((x) => x.name == message.messanger)[0].profileImg))
+    const maybe_profile = memberData.filter((x) => x.name == message.messanger)
+    receivedMessageArea.appendChild(messageComponent(
+        message, 
+        maybe_profile.length == 0 ? "https://lh3.googleusercontent.com/d/1JMsRPbDSJB1oK-d9iguJS_d0uVW8Ljr_" : maybe_profile.profileImg))
 }
 if(memberData[userData.index].receivedMessages.length == 0){
     receivedMessageArea.textContent = "メッセージはありません。"
