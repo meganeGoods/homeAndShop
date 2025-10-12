@@ -23,13 +23,18 @@ body{
 .comment{
     margin:8px 0 24px 0;
 }
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .comment_messanger{
-    display:inline-block;
+    margin: 0 8px;
     font-size: 0.9rem;
     font-weight: 500;
 }
 .comment_date{
-    display:inline-block;
+    margin: 0 8px;
     font-size: 0.9rem;
     font-weight: 500;
     color:var(--text-dark-sub);
@@ -40,6 +45,17 @@ body{
 .command{
     text-align: center;
 }
+.profileImgContainer{
+    width:2rem;
+    height: 2rem;
+}
+.profileImg{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 #fileTitle{
     font-weight: 500;
     margin-top:16px;

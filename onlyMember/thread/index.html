@@ -48,8 +48,14 @@ const fileArea = document.getElementById("fileArea")
 //データ充填
 document.getElementById("heading").textContent = threadsData[index].title
 document.getElementById("expalanation").textContent = threadsData[index].explanation
+const memberData = JSON.parse(localStorage.getItem("memberData"))
 for(data of threadsData[index].comments){
-    commentsArea.appendChild(commentComponent(data))
+    const maybe_profile = memberData.filter((x) => x.name == data.messanger)
+    console.log(memberData,data.messanger,maybe_profile)
+    commentsArea.appendChild(commentComponent(
+        data,
+        maybe_profile.length == 0 ? "https://lh3.googleusercontent.com/d/1JMsRPbDSJB1oK-d9iguJS_d0uVW8Ljr_" : maybe_profile[0].profileImg
+    ))
 }
 if(threadsData[index]?.attachments){
     document.getElementById("fileTitle").textContent = "添付ファイル"

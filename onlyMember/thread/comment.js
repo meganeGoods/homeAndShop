@@ -1,8 +1,13 @@
-function commentComponent(data){
+function commentComponent(data, profileImg){
     let string = `
     <div class="comment">
-        <p class="comment_messanger">${data.messanger}</p>
-        <p class="comment_date">${data.date}</p>
+        <div class="header">
+            <div class="profileImgContainer">
+                <img class="profileImg" src="${profileImg}" width=20px/>
+            </div>
+            <span class="comment_messanger">${data.messanger}</span>
+            <span class="comment_date">${data.date}</span>
+        </div>
         <p class="comment_text">${data.text}</p>
     </div>
     `
