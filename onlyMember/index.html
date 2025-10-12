@@ -21,7 +21,7 @@
     <div class="spacerM"></div>
     <p id="userName"></p>
     <div class="spacerM"></div>
-    <div id="wrapper">
+    <div id="wrapper" style="display: none;">
         <h1>スレッド</h1>
         <button
             id="createThreadsButton"
@@ -43,6 +43,7 @@
             onclick="alert('エラーが発生しました。もう一度お試しください。繰り返し起こるようなら佐々木晴政へ伝えてください。')">
             送信する>
         </button>
+        <h1>個人ファイル</h1>
     </div>
     <div class="spacerM"></div>
     <div class="spacerM"></div>
@@ -53,6 +54,8 @@
 if(!localStorage.getItem("userData")){
     location.href = "./admission"
 }
+//表示
+document.getElementById("wrapper").style="block"
 
 const threadsArea = document.getElementById("threadsArea")
 const threadsData = JSON.parse(localStorage.getItem("threadsData"))

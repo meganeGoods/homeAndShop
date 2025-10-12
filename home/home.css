@@ -27,7 +27,7 @@ h1,h2,h3{
     font-size: 2rem;
     font-family: var(--zenKakuGothicNew);
     color:var(--primary);
-    font-weight: 600;
+    font-weight: bold;
     margin-top: 8px;
     margin-bottom: 8px;
 }
