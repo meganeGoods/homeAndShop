@@ -1,0 +1,36 @@
+.attachedFig{
+    width:60%;
+}
+
+.messageWrapper{
+    padding:16px;
+    margin:16px;
+    border-radius: var(--r);
+    background-color: var(--background-light);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profileImgContainer{
+    width:2rem;
+    height: 2rem;
+}
+.profileImg{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.M_messanger{
+    margin: 0 8px;
+    font-weight: 500;
+    color:var(--text-dark);
+}
+.M_date{
+    margin: 0 8px;
+    font-weight: 500;
+    color:var(--text-dark-sub);
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="./onlyMember.css">
+    <link rel="stylesheet" href="./receivedMessage.css">
     <title>MGCS-社員ポータル</title>
 </head>
 <body>
@@ -43,13 +44,21 @@
             onclick="alert('エラーが発生しました。もう一度お試しください。繰り返し起こるようなら佐々木晴政へ伝えてください。')">
             送信する>
         </button>
-        <h1>個人ファイル</h1>
+        <h1>メッセージ</h1>
+        <button 
+            class="" 
+            style="background-color: var(--background-light-sub); color:var(--text-dark);margin:0.3em 4px 0.3em 4px; padding:0.6em 1em;width:auto;"
+            onclick="alert('エラーが発生しました。もう一度お試しください。繰り返し起こるようなら佐々木晴政へ伝えてください。')">
+            メッセージを送る>
+        </button>
+        <div id="receivedMessageArea"></div>
     </div>
     <div class="spacerM"></div>
     <div class="spacerM"></div>
 
 <script src="./threads.js"></script>
 <script src="./thread/file.js"></script>
+<script src="./receivedMessage.js"></script>
 <script>
 if(!localStorage.getItem("userData")){
     location.href = "./admission"
@@ -79,6 +88,13 @@ for(let file of memberData[userData.index].stockedFiles){
     )
 }
 
+const receivedMessageArea = document.getElementById("receivedMessageArea")
+for(let message of memberData[userData.index].receivedMessages){
+    receivedMessageArea.appendChild(messageComponent(message, memberData.filter((x) => x.name == message.messanger)[0].profileImg))
+}
+if(memberData[userData.index].receivedMessages.length == 0){
+    receivedMessageArea.textContent = "メッセージはありません。"
+}
 document.getElementById("userName").textContent = `[info] user:${userData.name}`
 </script>
 </body>
