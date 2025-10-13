@@ -68,7 +68,7 @@ body{
 }
 .fileTips{
     position: relative;
-    width:6rem;
+    width:10rem;
     display: flex;
     align-content: center;
     background-color: var(--background-light-sub);
@@ -80,7 +80,6 @@ body{
 }
 .fileName{
     display: inline-block;
-    width:5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

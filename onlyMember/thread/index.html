@@ -57,6 +57,9 @@ for(data of threadsData[index].comments){
         maybe_profile.length == 0 ? "https://lh3.googleusercontent.com/d/1JMsRPbDSJB1oK-d9iguJS_d0uVW8Ljr_" : maybe_profile[0].profileImg
     ))
 }
+if(threadsData[index].comments.length == 0){
+    commentsArea.textContent = "メッセージはありません"
+}
 if(threadsData[index]?.attachments){
     document.getElementById("fileTitle").textContent = "添付ファイル"
     for(data of threadsData[index].attachments){

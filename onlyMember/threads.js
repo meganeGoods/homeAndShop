@@ -8,7 +8,7 @@ function threadsComponent(data,index){
         <div class="thread">
             <h1 class="thread_title">${data.title}</h1>
             <p class="thread_explanation">${data.explanation}</p>
-            <p class="thread_date">${data.comments.at(-1).date}</p>
+            <p class="thread_date">${data.date}</p>
         </div>
     </a>
     `

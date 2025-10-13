@@ -13,7 +13,6 @@ body{
 
 #createThreadsButton{
     margin:16px;
-    width:calc(100% - 32px);
     padding:8px;
     color:var(--text-light);
     border:none;
@@ -22,6 +21,7 @@ body{
     font-weight: 600;
     font-size: 1.2rem;
     box-shadow: 0px 2px 8px var(--shadow);
+    width:min(80%,700px);
 }
 .thread{
     border-radius: var(--r);
@@ -29,6 +29,7 @@ body{
     margin:16px;
     padding:8px 16px;
     background-color: var(--background-light);
+    width:min(80%,700px)
 }
 .thread_title{
     font-weight: 600;
@@ -65,7 +66,7 @@ h1{
 }
 .fileTips{
     position: relative;
-    width:10rem;
+    width:16rem;
     display: flex;
     align-content: center;
     background-color: var(--background-light-sub);
@@ -77,7 +78,6 @@ h1{
 }
 .fileName{
     display: inline-block;
-    width:5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
