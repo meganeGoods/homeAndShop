@@ -72,7 +72,11 @@ const threadsData = JSON.parse(localStorage.getItem("threadsData"))
 const userData = JSON.parse(localStorage.getItem("userData"))
 threadsData.forEach((x, i) => {
     if(!(x.visibility == "secret" && userData.status == "commons")){
-        threadsArea.appendChild(threadsComponent(x, i))
+        threadsArea.appendChild(threadsComponent(
+            x, 
+            i,
+            threadsData[i].visibility == "secret"
+        ))
     }
 })
 

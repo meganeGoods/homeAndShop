@@ -83,3 +83,11 @@ h1{
     white-space: nowrap;
     margin:0;
 }
+
+.secret{
+    background-color: var(--background-dark);
+    color:var(--text-light);
+}
+.secret .thread_date{
+    color:var(--text-light-sub);
+}

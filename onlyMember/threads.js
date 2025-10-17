@@ -1,11 +1,11 @@
-function threadsComponent(data,index){
+function threadsComponent(data,index,isSecret){
     const string = `
     <a 
         href="./thread/?page=${index}"
         class="thread_link" 
         style="text-decoration:none; color:var(--text-dark);">
         
-        <div class="thread">
+        <div class="thread ${isSecret ? "secret" : "public"}">
             <h1 class="thread_title">${data.title}</h1>
             <p class="thread_explanation">${data.explanation}</p>
             <p class="thread_date">${data.date}</p>
