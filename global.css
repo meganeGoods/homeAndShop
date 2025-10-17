@@ -74,3 +74,12 @@ a{
     font-size:small;
     color: var(--text-dark-sub);
 }
+
+.progress{
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    mix-blend-mode:difference;
+    color:white;
+    text-align: right;
+    padding-right: 1em;
+}

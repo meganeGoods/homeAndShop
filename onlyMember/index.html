@@ -53,6 +53,7 @@
         </button>
         <div id="receivedMessageArea"></div>
     </div>
+    <p class="progress" id="progress"></p>
     <div class="spacerM"></div>
     <div class="spacerM"></div>
 
@@ -100,6 +101,8 @@ if(memberData[userData.index].receivedMessages.length == 0){
     receivedMessageArea.textContent = "メッセージはありません。"
 }
 document.getElementById("userName").textContent = `[info] user:${userData.name}`
+
+document.getElementById("progress").textContent = `progress:${3 + userData.index} / 7`
 </script>
 </body>
 </html>
