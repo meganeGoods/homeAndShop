@@ -32,23 +32,30 @@
 
 //sessionStrageかなにかに保存
 async function getData(){
-    let url = "https://script.google.com/macros/s/AKfycbzAtS5RGigsUMEEkq2aKjGbV5Q27caBYgga4m8S56YVXYkN3vbSybiIRlmf_oWHv-Ja/exec";
-    
-    const key = document.getElementById("textBox").value
-    url += `?password=${key}`
-    try {
-        const response = await fetch(url)
-        if (!response.ok) {
-            throw new Error(`レスポンスステータス: ${response.status}`)
-        }
-        console.log(response)
-        const json = await response.json()
-        console.log(json)
-        return json
-    } catch (error) {
-        console.error(error.message)
-        return "failure!"
+  async function sha256(text){
+    const uint8  = new TextEncoder().encode(text)
+    const digest = await crypto.subtle.digest('SHA-256', uint8)
+    return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2,'0')).join('')
+  }
+  
+  let url = "https://script.google.com/macros/s/AKfycbzAtS5RGigsUMEEkq2aKjGbV5Q27caBYgga4m8S56YVXYkN3vbSybiIRlmf_oWHv-Ja/exec";
+  
+  const key = document.getElementById("textBox").value
+  url += `?password=${await sha256(key)}`
+  console.log(key,await sha256(key))
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+        throw new Error(`レスポンスステータス: ${response.status}`)
     }
+    console.log(response)
+    const json = await response.json()
+    console.log(json)
+    return json
+  } catch (error) {
+    console.error(error.message)
+    return "failure!"
+  }
 }
 async function getSubData(){
     console.log("loading...")
