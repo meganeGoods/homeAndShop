@@ -71,12 +71,13 @@ const threadsArea = document.getElementById("threadsArea")
 const threadsData = JSON.parse(localStorage.getItem("threadsData"))
 const userData = JSON.parse(localStorage.getItem("userData"))
 threadsData.forEach((x, i) => {
+    console.log(threadsData[i].comments.at(-1)?.text)
     if(!(x.visibility == "secret" && userData.status == "commons")){
         threadsArea.appendChild(threadsComponent(
             x, 
             i,
             threadsData[i].visibility == "secret",
-            threadsData[i].comments.at(-1).text != "closed"
+            threadsData[i].comments.at(-1)?.text != "closed"
         ))
     }
 })

@@ -3,7 +3,7 @@ function threadsComponent(data,index,isSecret,isDisplay){
     <a 
         href="./thread/?page=${index}"
         class="thread_link" 
-        style="text-decoration:none; color:var(--text-dark); display:'${isDisplay ? "block" : "none"}'">
+        style="text-decoration:none; color:var(--text-dark); display:${isDisplay ? '"block"' : "none"}">
         
         <div class="thread ${isSecret ? "secret" : "public"}">
             <h1 class="thread_title">${data.title}</h1>
