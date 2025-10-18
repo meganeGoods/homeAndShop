@@ -75,7 +75,8 @@ threadsData.forEach((x, i) => {
         threadsArea.appendChild(threadsComponent(
             x, 
             i,
-            threadsData[i].visibility == "secret"
+            threadsData[i].visibility == "secret",
+            threadsData[i].comments.at(-1).text != "closed"
         ))
     }
 })
@@ -106,7 +107,7 @@ if(memberData[userData.index].receivedMessages.length == 0){
 }
 document.getElementById("userName").textContent = `[info] user:${userData.name}`
 
-document.getElementById("progress").textContent = `progress:${3 + userData.index} / 7`
+document.getElementById("progress").textContent = `progress:${3 + userData.index} / 8`
 </script>
 </body>
 </html>

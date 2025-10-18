@@ -23,6 +23,7 @@
     </div>
     <div class="spacerM"></div>
     <p id="threadId" class="smallText"></p>
+    <p class="progress" id="progress"></p>
     <div class="spacerM"></div>
 </div>
 
@@ -68,6 +69,11 @@ if(threadsData[index]?.attachments){
 }
 
 document.getElementById("threadId").textContent = `[info] threadsNum=${index}`
+
+if(threadsData[index].title == "常用パスワード共有"){
+    document.getElementById("progress").textContent = "progress:7/8"
+}
+
 </script>
 </body>
 </html>
